@@ -3,10 +3,10 @@ import requests
 
 while True:
     main_api = "https://www.mapquestapi.com/directions/v2/route?" 
-    orig = input("Origen (Ciudad, Pais): ")
+    orig = input("Origen (Ciudad de origen o Pais): ")
     if orig == "S" or orig == "salida": 
         break  
-    dest = input("Destino (Ciudad, Pais): ")
+    dest = input("Destino (Ciudad de destino o Pais): ")
     if dest == "S" or dest == "salida": 
         break  
     key = "MlXqQ9nqoPBKtCSS75QijE3rGNSEe9M4"  
