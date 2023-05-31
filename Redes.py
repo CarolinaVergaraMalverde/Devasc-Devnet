@@ -3,14 +3,14 @@ import requests
 
 while True:
     main_api = "https://www.mapquestapi.com/directions/v2/route?" 
-    orig = input("Origen (Ciudad de origen, Pais): ")
-    if orig == "S" or orig == "salida": 
+    origen = input("Origen (Ciudad de origen, Pais): ")
+    if origen == "S" or origen == "salida": 
         break  
     dest = input("Destino (Ciudad de destino, Pais): ")
-    if dest == "S" or dest == "salida": 
+    if destino == "S" or destino == "salida": 
         break  
     key = "MlXqQ9nqoPBKtCSS75QijE3rGNSEe9M4"  
-    url = main_api + urllib.parse.urlencode({"key": key, "from": orig, "to": dest, "unit": "k"}) 
+    url = main_api + urllib.parse.urlencode({"key": key, "from": origen, "to": destino, "unit": "k"}) 
     json_data = requests.get(url).json() 
 
     print("URL: " + url) 
@@ -19,7 +19,7 @@ while True:
     if json_status == 0:     
         print("API Status: " + str(json_status) + " = Llamada a ruta correcta.\n")
         print("=============================================")         
-        print("Dirección de origen: " + orig + " Hacia: " + dest)         
+        print("Dirección de origen: " + origen + " Hacia: " + destino)         
         print("Kilómetros: " + str("{:.1f}".format(json_data["route"]["distance"]))) 
         print("Duración del viaje: " + json_data["route"]["formattedTime"])         
        
