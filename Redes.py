@@ -7,10 +7,10 @@ while True:
     if origen == "S" or origen == "salida": 
         break  
     dest = input("Destino (Ciudad de destino, Pais): ")
-    if destino == "S" or destino == "salida": 
+    if dest == "S" or dest == "salida": 
         break  
     key = "MlXqQ9nqoPBKtCSS75QijE3rGNSEe9M4"  
-    url = main_api + urllib.parse.urlencode({"key": key, "from": origen, "to": destino, "unit": "k"}) 
+    url = main_api + urllib.parse.urlencode({"key": key, "from": origen, "to": dest, "unit": "k"}) 
     json_data = requests.get(url).json() 
 
     print("URL: " + url) 
